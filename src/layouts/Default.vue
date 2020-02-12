@@ -1,15 +1,17 @@
 <template>
   <v-app>
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/summary">Summary</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
+	<v-app-bar app clipped-left clipped-right>
+		<v-btn text>
+    	    <g-link class="nav__link" to="/">{{ $static.metadata.siteName }}</g-link>
+		</v-btn>
+		<v-spacer/>
+		<v-btn text>
+	        <g-link class="nav__link" to="/summary">Summary</g-link>
+		</v-btn>
+		<v-btn text>
+        	<g-link class="nav__link" to="/about/">About</g-link>
+		</v-btn>
+	</v-app-bar>
 	<v-content>
       <v-container fluid>
         <slot/>
