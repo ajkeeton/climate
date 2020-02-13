@@ -1,16 +1,18 @@
 <template>
   <Layout>
-    <div class="article">
-      <h1>{{ $page.infoCard.title }}</h1>
-      <span>{{ $page.infoCard.date }}</span>
-      <g-image v-if="$page.infoCard.cover_image" :src="$page.infoCard.cover_image"/>
-      <div class="content" v-html="$page.infoCard.content" />
-    </div>
+    <InfoCard :card="$page.infoCard"/>
   </Layout>
 </template>
 
 <script>
+
+import InfoCard from '~/components/InfoCard.vue'
+
 export default {
+  // name: 'InfoCard',
+  components: {
+    InfoCard
+  },
   metaInfo () {
     return {
       title: this.$page.infoCard.title
@@ -24,7 +26,7 @@ export default {
     infoCard (path: $path) {
       title
       date (format: "D MMMM, YYYY")
-	  cover_image
+	    cover_image
       content
     }
   }
