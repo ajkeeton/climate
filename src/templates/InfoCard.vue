@@ -1,7 +1,6 @@
 <template>
   <Layout>
     <div class="article">
-test test test
       <h1>{{ $page.infoCard.title }}</h1>
       <span>{{ $page.infoCard.date }}</span>
       <g-image v-if="$page.infoCard.cover_image" :src="$page.infoCard.cover_image"/>

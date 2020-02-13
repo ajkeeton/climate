@@ -6,7 +6,6 @@
     <h1 v-html="$static.posts.edges[1].node.title"/>
     <h1 v-html="$static.posts.edges[2].node.title"/>
 
-
     <ul>
       <li v-for="{ node } in $static.posts.edges" :key="node._id">
         <router-link :to="node.path">
