@@ -1,2 +1,2 @@
-export const singleQuote = false;
+//export const singleQuote = false;
 export const semi = false;

@@ -20,6 +20,18 @@ module.exports = {
         typeName: 'Post',
         path: './content/posts/**/*.md',
       }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'PageContent',
+        path: './content/pages/*.md',
+      }
     }
-  ]
+  ],
+  transformers: {
+    remark: {
+      squeezeParagraphs: false
+    }
+  }
 }

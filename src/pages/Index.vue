@@ -1,22 +1,34 @@
 <template>
   <Layout>
-
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
+    <v-content class="pt-2">
+      <v-layout wrap row>
+        <v-flex sm2 lg1>
+        </v-flex>
+        <v-flex sm8 md5 lg5>
+          <v-card>
+            <v-card-text v-html="$page.pageContent.content"/>
+          </v-card>
+        </v-flex>
+        <v-flex offset-sm-2 offset-md-0 sm6 md5 lg6>
+          <v-card>
+            <v-card-text v-html="$page.pageContent.content"/>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-content>
   </Layout>
 </template>
+
+<page-query>
+query {
+  pageContent(id: 1) {
+    id
+    title
+    cover_image
+    content
+  }
+}
+</page-query>
 
 <script>
 export default {
@@ -25,4 +37,3 @@ export default {
   }
 }
 </script>
-
