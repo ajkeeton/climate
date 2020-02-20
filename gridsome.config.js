@@ -27,6 +27,13 @@ module.exports = {
         typeName: 'PageContent',
         path: './content/pages/*.md',
       }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Argument',
+        path: './content/args/*.md',
+      }
     }
   ],
   transformers: {
