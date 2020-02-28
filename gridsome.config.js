@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'The CO2 Spew',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
@@ -33,6 +33,27 @@ module.exports = {
       options: {
         typeName: 'Argument',
         path: './content/args/*.md',
+        refs: {
+          // Create a Tag content type and its nodes automatically.
+          tags: {
+            typeName: 'Tag',
+            route: "/tag/:id",
+            create: true
+          }
+        }
+      }
+    },
+    {
+      use: 'gridsome-plugin-flexsearch',
+      options: {
+          collections: [
+              {
+                typeName: 'Argument',
+                indexName: 'indexArgument',
+                fields: ['title', 'tags', 'description']
+              }
+          ],
+          searchFields: ['title', 'tags']
       }
     }
   ],
