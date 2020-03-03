@@ -4,7 +4,7 @@ subtitle: But the data turned out wrong
 published: true
 cover_image: ./images/ted_cruz.jpg
 tags: ["cruz", "rss", "satellite"]
-description: Senator Cruz used RSS data to argue that the Earth wasn't warming. It was a good attempt. And have you heard about the Climate Mafia?
+description: Senator Cruz used RSS data to argue that the Earth wasn't warming. There was a problem, however...
 ---
 lorem and stuff
 

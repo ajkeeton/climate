@@ -4,6 +4,22 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/akeeton/c/climate/src/templates/Post.vue")
   },
   {
+    path: "/content/posts/ted-cruz-2/cruz-and-rss/",
+    component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/akeeton/c/climate/src/templates/Post.vue")
+  },
+  {
+    path: "/content/posts/ted-cruz-3/cruz-and-rss/",
+    component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/akeeton/c/climate/src/templates/Post.vue")
+  },
+  {
+    path: "/content/posts/ted-cruz-4/cruz-and-rss/",
+    component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/akeeton/c/climate/src/templates/Post.vue")
+  },
+  {
+    path: "/content/posts/ted-cruz-5/cruz-and-rss/",
+    component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/akeeton/c/climate/src/templates/Post.vue")
+  },
+  {
     path: "/content/posts/ted-cruz/cruz-and-rss/",
     component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/akeeton/c/climate/src/templates/Post.vue")
   },
@@ -24,15 +40,19 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--info-card-vue" */ "/Users/akeeton/c/climate/src/templates/InfoCard.vue")
   },
   {
-    path: "/content/cards/1000-years/1000-years/",
-    component: () => import(/* webpackChunkName: "page--src--templates--info-card-vue" */ "/Users/akeeton/c/climate/src/templates/InfoCard.vue")
-  },
-  {
     path: "/content/cards/800k-years/800k-years/",
     component: () => import(/* webpackChunkName: "page--src--templates--info-card-vue" */ "/Users/akeeton/c/climate/src/templates/InfoCard.vue")
   },
   {
+    path: "/content/cards/1000-years/1000-years/",
+    component: () => import(/* webpackChunkName: "page--src--templates--info-card-vue" */ "/Users/akeeton/c/climate/src/templates/InfoCard.vue")
+  },
+  {
     path: "/content/args/scientists-just-say-this-to-make-money/",
+    component: () => import(/* webpackChunkName: "page--src--templates--argument-vue" */ "/Users/akeeton/c/climate/src/templates/Argument.vue")
+  },
+  {
+    path: "/content/args/scientists-claimed-that/",
     component: () => import(/* webpackChunkName: "page--src--templates--argument-vue" */ "/Users/akeeton/c/climate/src/templates/Argument.vue")
   },
   {
@@ -41,10 +61,6 @@ export default [
   },
   {
     path: "/content/args/scientists-fake-data/",
-    component: () => import(/* webpackChunkName: "page--src--templates--argument-vue" */ "/Users/akeeton/c/climate/src/templates/Argument.vue")
-  },
-  {
-    path: "/content/args/scientists-claimed-that/",
     component: () => import(/* webpackChunkName: "page--src--templates--argument-vue" */ "/Users/akeeton/c/climate/src/templates/Argument.vue")
   },
   {
@@ -78,6 +94,18 @@ export default [
   {
     path: "/tag/:id/",
     component: () => import(/* webpackChunkName: "page--src--templates--tag-vue" */ "/Users/akeeton/c/climate/src/templates/Tag.vue")
+  },
+  {
+    path: "/index-3/:page(\\d+)?/",
+    component: () => import(/* webpackChunkName: "page--src--pages--index-3-vue" */ "/Users/akeeton/c/climate/src/pages/Index-3.vue")
+  },
+  {
+    path: "/index-4/:page(\\d+)?/",
+    component: () => import(/* webpackChunkName: "page--src--pages--index-4-vue" */ "/Users/akeeton/c/climate/src/pages/Index-4.vue")
+  },
+  {
+    path: "/index-5/:page(\\d+)?/",
+    component: () => import(/* webpackChunkName: "page--src--pages--index-5-vue" */ "/Users/akeeton/c/climate/src/pages/Index-5.vue")
   },
   {
     path: "/summary/",

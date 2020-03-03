@@ -1,188 +1,106 @@
 <template>
   <Layout>
-    <v-container fluid class="grey lighten-5">
-      <v-row>
-        <v-col cols="9" sm="9">
-          <v-card flat class="grey lighten-5" t>
-            <v-card-text>
-              <h1>
-                The left says the science is settled. The right says it's not.
-              </h1>
-              <br />
-              <p>
-                Voters have an obligation to be informed and that means
-                considering arguments from both sides.
-              </p>
-              <p>
-                Are we really faced with a global crisis that threatens the well
-                being of all of us, and our descendents? I set out hoping to set
-                my mind at ease by finding evidence and solid arguments that the
-                deniers were right.
-              </p>
-              <p>
-                What I found were mounds of shallow arguments and
-                misinformation.
-              </p>
-              <h2>
-                If the conservatives are right, they're doing everything wrong
-                to show it
-              </h2>
-            </v-card-text>
-          </v-card>
+    <v-container fluid>
+      <v-row v-if="false" wrap class="justify-center align-center">
+        <v-col xs="3" lg="3" class="justify-center">
+          <div
+            class="grey lighten-5"
+            :style="
+              'background: url(' +
+                graph +
+                ') center no-repeat; justify-content: center; display: flex; align-items: center;'
+            "
+          >
+            <!--<g-image
+              src="~/assets/images/nasa-gistemp.png"
+              width="250"
+              height="150"
+              quality="100"
+            />
+            <v-card-actions>-->
+            <v-btn dark color="cyan">
+              The data<v-icon>chevron_right</v-icon>
+            </v-btn>
+            <!--</v-card-actions>-->
+          </div>
         </v-col>
-        <v-col cols="3" sm="3">
-          <v-card border class="grey lighten-5">
-            <v-card-subtitle>Is it warming?</v-card-subtitle>
-                <v-card-actions>
-                  <v-btn color="orange" text>
-                    What the science says >
-                  </v-btn>
-                </v-card-actions>
-                <v-divider/>
-                <v-card-actions>
-                  <v-btn color="orange" text>
-                    Arguments against >
-                  </v-btn>
-                </v-card-actions>
+        <v-col xs="3" lg="3">
+          <v-card tile class="card-outter">
+            <g-image
+              src="~/assets/images/volcano.jpg"
+              width="250"
+              height="150"
+              quality="100"
+              fit="cover"
+            />
+            <v-card-text>dsfasdfs dfas dfas fasdf<br /> </v-card-text>
+            <v-card-actions class="button-top">
+              <v-btn dark color="cyan">
+                common arguments<v-icon>chevron_right</v-icon>
+              </v-btn>
+            </v-card-actions>
           </v-card>
-          <!--
-          <v-card border class="grey lighten-5">
-            <v-card-title>Tags</v-card-title>
-            <v-card-text>
-              <ul>
-                <li v-for="edge in $page.tags.edges" :key="edge.id">
-                  <g-link :to="edge.node.path">{{ edge.node.id }}</g-link>
-                </li>
-              </ul>
-            </v-card-text>
-          </v-card>
-          -->
         </v-col>
       </v-row>
-      <v-divider />
-      <v-row>
-        <v-col cols="10">
-          <v-row>
-            <v-col cols="5" class="ma-2">
-              <v-row class="my-2" v-for="edge in $page.posts.edges" :key="edge.id">
-                <v-card  hover :to="edge.node.path">
-                  <v-img
-                    class="white--text"
-                    height="200px"
-                    :src="edge.node.cover_image.src"
-                  >
-                    <v-card-title v-html="edge.node.title" />
-                    <v-card-subtitle
-                      class="pb-0 white--text"
-                      v-html="edge.node.subtitle"
-                    />
-                  </v-img>
-                    <v-card-title v-html="edge.node.title" />
-                    <v-card-subtitle
-                      class="pb-0"
-                      v-html="edge.node.subtitle"
-                    />
-                  <v-card-text
-                    class="text--primary"
-                    v-html="edge.node.description"
-                  />
-                  <v-card-actions>
-                    <v-spacer />
-                    <v-btn color="orange" text>
-                      More
-                    </v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-row>
-            </v-col>
-            <v-col cols="1"> </v-col>
-            <v-col cols="5">
-              <v-row class="my-2"  v-for="edge in $page.posts.edges" :key="edge.id">
-                <v-card  hover :to="edge.node.path">
-                    <v-card-title v-html="edge.node.title" />
-                    <v-card-subtitle
-                      class="pb-0"
-                      v-html="edge.node.subtitle"
-                    />
-                  <v-img
-                    class="white--text"
-                    height="200px"
-                    :src="edge.node.cover_image.src"
-                  >
-                  </v-img>
-                  <v-card-text
-                    class="text--primary"
-                    v-html="edge.node.description"
-                  />
-
-                  <v-card-actions>
-                    <v-spacer />
-                    <v-btn color="orange" text>
-                      More
-                    </v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-row>
-            </v-col>
-
-            <!--
-            <v-card flat :to="edge.node.path" height="200">
-              <v-row align="center">
-                <v-col cols="4" xs="12" md="4">
-                  <v-img
-                    style="border-radius: 5px;"
-                    class="pa-0"
-                    height="200"
-                    contain
-                    :src="edge.node.cover_image.src"
-                  ></v-img>
-                </v-col>
-
-                <v-col cols="8" xs="12" md="8">
-                  <v-list-item>
-                    <v-list-item-content>
-                      <v-list-item-title
-                        class="title"
-                        v-html="edge.node.title"
-                      />
-                      <v-list-item-subtitle v-html="edge.node.subtitle" />
-                    </v-list-item-content>
-                  </v-list-item>
-                  <v-divider />
-                  <v-card-text
-                    class="text--primary"
-                    v-html="edge.node.description"
-                  />
-                </v-col>
-              </v-row>
-            </v-card>
-            -->
-          </v-row>
+      <v-row wrap class="justify-center align-center">
+        <v-col>
+          <v-card> </v-card>
         </v-col>
+      </v-row>
 
-        <v-col cols="2">
-          <v-row
-            align="stretch"
-            justify="center"
-            v-for="n in len_div_3()"
-            :key="n"
-          >
-            <v-col cols="12" v-for="arg in next_at_offset(n)" :key="arg.id">
-              <v-card hover>
-                <v-card-title style="word-break: break-word">{{
-                  arg.node.title
-                }}</v-card-title>
-                <v-card-text>
-                  {{ arg.node.title }}
-                </v-card-text>
-                <v-card-actions>
-                  <v-btn color="orange" text>
-                    More
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
+      <v-row wrap class="justify-center align-center">
+        <v-col cols="12">
+          <v-card tile>
+            <v-card-subtitle class="text-center"
+              >If the denialists are right, they're doing something wrong
+            </v-card-subtitle>
+            <v-divider />
+            <v-row v-for="n in num_rows" :key="n" class="justify-center">
+              <v-col
+                xs="12"
+                sm="6"
+                md="4"
+                lg="3"
+                v-for="edge in next_at_offset(n)"
+                :key="edge.id"
+              >
+                <v-card :to="edge.node.path" class="card-outer ma-4">
+                  <v-img
+                    class="white--text"
+                    height="200px"
+                    :src="edge.node.cover_image.src"
+                  >
+                  </v-img>
+                  <v-card-title
+                    class="font-weight-regular title mb-1 nobreak"
+                    v-html="edge.node.title"
+                  />
+                  <v-card-subtitle class="pb-2 caption" v-html="edge.node.subtitle" />
+
+                  <v-divider class="mx-4" />
+                  <v-card-text
+                    class="text--primary"
+                    v-html="edge.node.description"
+                  />
+                  <v-card-actions class="card-actions">
+                    <v-spacer />
+                    <v-btn class="mx-2" dark large color="cyan">
+                      Read More<v-icon>chevron_right</v-icon>
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12">
+                <v-card flat>
+                  <center>
+                    <Pager :linkClass="'v-pagination v-pagination__navigation'" :info="$page.posts.pageInfo"/>
+                  </center>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
@@ -217,18 +135,6 @@ query($page:Int) {
       }
     }
   },
-  info: allInfoCard(filter: { published: { eq: true }}) {
-    edges {
-      node {
-        id
-        title
-        date (format: "D. MMMM YYYY")
-        description
-        cover_image (width: 770, height: 380, blur: 10)
-        path
-      }
-    }
-  }
   tags: allTag {
     edges {
       node {
@@ -241,21 +147,87 @@ query($page:Int) {
 </page-query>
 
 <script>
+import nasa_gis from "@/assets/images/nasa-gistemp.png";
+import { Pager } from 'gridsome'
+
 export default {
   data() {
-    return {};
+    return {
+      num_rows: 1,
+      num_cols: 1,
+      graph: nasa_gis
+    };
+  },
+  components: {
+    Pager
   },
   methods: {
-    len_div_3() {
-      return Math.ceil(this.$page.args.edges.length / 3);
+    set_num_vrows() {
+      // https://vuetifyjs.com/en/customization/breakpoints
+
+      console.log(this.$vuetify.breakpoint);
+      if (this.$vuetify.breakpoint.xs === true) {
+        // console.log("X SMALL")
+        this.num_rows = this.$page.posts.edges.length;
+        this.num_cols = 1;
+      } else if (this.$vuetify.breakpoint.sm === true) {
+        // console.log("SMALL")
+        this.num_cols = 2;
+        this.num_rows = Math.ceil(this.$page.posts.edges.length / 2);
+      } else if (this.$vuetify.breakpoint.md === true) {
+        // console.log("MD")
+        this.num_cols = 3;
+        this.num_rows = Math.ceil(this.$page.posts.edges.length / 3);
+      } else {
+        this.num_cols = 4
+        this.num_rows = Math.ceil(this.$page.posts.edges.length / 4);
+      }
+      // console.log("num rows/cols:", this.num_rows, this.num_cols);
     },
     next_at_offset(n) {
       n -= 1;
-      return this.$page.args.edges.slice(n * 3, n * 3 + 3);
+      console.log("from/to", n * this.num_cols, n * this.num_cols + this.num_cols, "out of", this.$page.posts.edges.length)
+
+      return this.$page.posts.edges.slice(
+        n * this.num_cols,
+        n * this.num_cols + this.num_cols
+      );
+    },
+    onResize() {
+      this.set_num_vrows();
     }
   },
   metaInfo: {
     title: "Hello, world!"
+  },
+  mounted() {
+    this.set_num_vrows();
+    window.addEventListener("resize", this.onResize, { passive: true });
+  },
+  beforeDestroy() {
+    if (typeof window !== "undefined") {
+      window.removeEventListener("resize", this.onResize, { passive: true });
+    }
   }
 };
 </script>
+
+<style scoped>
+.card-outter {
+  //position: relative;
+  //padding-bottom: 50px;
+}
+.card-actions {
+  //position: absolute;
+  //bottom: 10px;
+  //right: -25px;
+}
+.button-top {
+  //position: absolute;
+  //bottom: 5px;
+  //right: 5px;
+}
+.nobreak {
+  word-break: break-word;
+}
+</style>

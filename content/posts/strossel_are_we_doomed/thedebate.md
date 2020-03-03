@@ -1,6 +1,6 @@
 ---
-title: Pushing a narrative
-description: <ul><li>Three scientists funded by fossil fuel companies</li><li>Hosted by a conservative think tank</li><li>Presented by a conservative journalist</li></ul> <br/>... hold a one-sided pretend debate
+title: Pushing a conservative narrative
+description: A conservative think tank hosts a pretend debate with three conservative scientists and it all gets presented by a conservative journalist
 tags: ["trossel", "heartland"]
 cover_image: ./images/thumb.png
 ---

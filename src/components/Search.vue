@@ -1,12 +1,16 @@
 <template>
   <div>
-    <input
-      id="search"
+    <v-text-field
+      label="search"
       v-model="searchTerm"
-      class="input"
+      class="tsearch"
+      flat
+      outlined
       type="text"
-      placeholder="Search">
-    {{ searchResults }}
+      placeholder="Search"
+      solo-inverted
+      dense
+      prepend-inner-icon="search"/>
   </div>
 </template>
 
@@ -24,3 +28,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.tsearch {
+  top: 20px;
+}
+</style>

@@ -7,6 +7,7 @@
 
 const nodeExternals = require("webpack-node-externals");
 const { GraphQLSchema } = require("gridsome/graphql");
+//const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 
 module.exports = function(api) {
   api.createPages(({ createPage }) => {

@@ -10,14 +10,21 @@ export default function (Vue, { appOptions, router, head, isClient }) {
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
   })
-  
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',
+  });
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css',
+  })
+
   const opts = { } //opts includes, vuetify themes, icons, etc.
 
   Vue.use(Vuetify)
   
   appOptions.vuetify = new Vuetify(opts);
   
-
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
 }
