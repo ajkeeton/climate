@@ -1,14 +1,92 @@
 <template>
   <Layout>
-    <ul>
-      <li v-for="{ node } in $page.posts.edges" :key="node._id">
-        <router-link :to="node.path">
-          <h2 v-html="node.title"/>
-        </router-link>
-        <span v-html="node.date"/>
-        <div v-html="node.description"/>
-      </li>
-    </ul>
+    <v-card>
+      <v-card>
+        <v-card-title class="card_title">The real data</v-card-title>
+
+        <v-container fluid class="ma-1 pa-1">
+          <v-row class="align-center">
+            <v-col xs="12" sm="12" md="6">
+              <v-card-text>
+                <p>
+                  If you want to know what the
+                  <span class="font-italic font-weight-bold">real</span> science says about climate
+                  change, you have to go to the source.
+                </p>
+                <p>
+                  The media can not be trusted to provide you with an
+                  undistorted representation of a heavily politicized topic. The
+                  media makes its money by keeping your attention. Sometimes the
+                  truth is boring, inconvenient, or runs contrary to a desired
+                  narrative. Same goes for blogs and podcasts.
+                </p>
+                
+                <p>
+                  Have you ever seen the actual data that is at the heart of the
+                  climate change debate? Here you will find exactly that,
+                  complete with links to the original source material. The plots
+                  below are all generated from real data that you can validate
+                  for yourself. The papers referenced below provide details about how
+                  the data was collected and provide their own sources for you
+                  to learn more.
+                </p>
+
+                <p>
+                  When it comes to climate science, we can cut out the middle
+                  man and go straight to the source.
+                </p>
+              </v-card-text>
+            </v-col>
+
+            <v-col xs="12" sm="12" md="6">
+              <InfoCard-2 :card="years_130" />
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <v-card-title class="card_title" v-html="years_1000.title" />
+
+        <v-container fluid class="ma-1 pa-1">
+          <v-row class="align-center">
+            <v-col xs="12" sm="12" md="6">
+              <v-card-text>
+                <p>Arguments</p>
+
+                <p>How do we know and shit</p>
+              </v-card-text>
+            </v-col>
+
+            <v-col xs="12" sm="12" md="6">
+              <InfoCard-2 :card="years_1000" />
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <v-card-title class="card_title" v-html="years_800k.title" />
+
+        <v-container fluid class="ma-1 pa-1">
+          <v-row class="align-center">
+            <v-col xs="12" sm="12" md="6">
+              <v-card-text v-html="years_800k.content" />
+            </v-col>
+
+            <v-col xs="12" sm="12" md="6">
+              <InfoCard-2 :card="years_800k" />
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-card>
+
+      <ul>
+        <li v-for="{ node } in $page.posts.edges" :key="node._id">
+          <router-link :to="node.path">
+            <h2 v-html="node.title" />
+          </router-link>
+          <span v-html="node.date" />
+          <div v-html="node.description" />
+        </li>
+      </ul>
+    </v-card>
   </Layout>
 </template>
 
@@ -21,8 +99,12 @@ query {
         title
         date (format: "D. MMMM YYYY")
         description
-        cover_image (width: 770, height: 380, blur: 10)
+        cover_image
         path
+        slug
+        content
+        source
+        args
       }
     }
   }
@@ -30,9 +112,64 @@ query {
 </page-query>
 
 <script>
+import InfoCard2 from "@/components/InfoCard-2.vue";
+
 export default {
   metaInfo: {
-    title: 'About us'
+    title: "About"
+  },
+  data() {
+    return {
+      years_130: "",
+      years_1000: "",
+      years_800k: "",
+      problems_paleo: "",
+      outlier: ""
+    };
+  },
+  components: {
+    InfoCard2
+  },
+  methods: {
+    slug(i) {
+      try {
+        return this.$page.posts.edges[i].node.slug;
+      } catch {
+        return "";
+      }
+    }
+  },
+  mounted() {
+    /*
+      XXX
+      There absolutely has to be a better way to do this...
+      Leaving it as this for now. Gridsome should optimize it out anyway */
+    for (const e in this.$page.posts.edges) {
+      switch (this.slug(e)) {
+        case "130-years":
+          this.years_130 = this.$page.posts.edges[e].node;
+          break;
+        case "1000-years":
+          this.years_1000 = this.$page.posts.edges[e].node;
+          break;
+        case "problems-paleo":
+          this.problems_paleo = this.$page.posts.edges[e].node;
+          break;
+        case "800k-years":
+          this.years_800k = this.$page.posts.edges[e].node;
+          break;
+        case "outlier-context":
+          this.outlier = this.$page.posts.edges[e].node;
+        default:
+          break;
+      }
+    }
   }
-}
+};
 </script>
+
+<style scoped>
+.card_title {
+  padding-bottom: 2px;
+}
+</style>
