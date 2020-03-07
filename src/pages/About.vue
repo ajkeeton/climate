@@ -2,43 +2,39 @@
   <Layout>
     <v-card>
       <v-card>
-        <v-card-title class="card_title">The real data</v-card-title>
-
+        <!--<v-card-title class="card_title">The real data</v-card-title>-->
+        
         <v-container fluid class="ma-1 pa-1">
-          <v-row class="align-center">
-            <v-col xs="12" sm="12" md="6">
-              <v-card-text>
-                <p>
-                  If you want to know what the
-                  <span class="font-italic font-weight-bold">real</span> science says about climate
-                  change, you have to go to the source.
-                </p>
-                <p>
-                  The media can not be trusted to provide you with an
-                  undistorted representation of a heavily politicized topic. The
-                  media makes its money by keeping your attention. Sometimes the
-                  truth is boring, inconvenient, or runs contrary to a desired
-                  narrative. Same goes for blogs and podcasts.
-                </p>
-                
-                <p>
-                  Have you ever seen the actual data that is at the heart of the
-                  climate change debate? Here you will find exactly that,
+          <v-row justify="center" class="align-center">
+            <v-col xs="12" md="8">
+              <v-card flat >
+                <v-card-text>
+                  <h2>Have you ever seen the real data that is at the heart of the
+                  climate change debate?</h2>
+                  <br/>
+                  <p>Here you will find exactly that,
                   complete with links to the original source material. The plots
                   below are all generated from real data that you can validate
-                  for yourself. The papers referenced below provide details about how
+                  for yourself. The papers referenced here provide details about how
                   the data was collected and provide their own sources for you
-                  to learn more.
-                </p>
+                  to learn more.</p>
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+          <v-divider/>
 
-                <p>
-                  When it comes to climate science, we can cut out the middle
-                  man and go straight to the source.
+          <v-card-title class="card_title" v-html="years_130.title" />
+
+          <v-row class="align-center">
+            <v-col xs="12" sm="12" md="4">
+              <v-card-text>
+                <p v-html="years_130.content">
                 </p>
               </v-card-text>
             </v-col>
 
-            <v-col xs="12" sm="12" md="6">
+            <v-col xs="12" sm="12" md="8">
               <InfoCard-2 :card="years_130" />
             </v-col>
           </v-row>
@@ -48,33 +44,47 @@
 
         <v-container fluid class="ma-1 pa-1">
           <v-row class="align-center">
-            <v-col xs="12" sm="12" md="6">
+            <v-col xs="12" sm="12" md="4">
               <v-card-text>
-                <p>Arguments</p>
-
-                <p>How do we know and shit</p>
+                <p v-html="years_1000.content">
+                </p>
               </v-card-text>
             </v-col>
 
-            <v-col xs="12" sm="12" md="6">
+            <v-col xs="12" sm="12" md="8">
               <InfoCard-2 :card="years_1000" />
             </v-col>
           </v-row>
         </v-container>
 
+        <v-divider/>
+
+        <v-card-text>
+          <h2>Have you ever seen the real data that is at the heart of the
+          climate change debate?</h2>
+          <br/>
+          <p>Here you will find exactly that,
+          complete with links to the original source material. The plots
+          below are all generated from real data and links are provided so 
+          you can validate for yourself. The papers referenced here provide 
+          details about how the data was collected and provide their own sources 
+          for you to learn more.</p>
+        </v-card-text>
+        <!--
         <v-card-title class="card_title" v-html="years_800k.title" />
 
         <v-container fluid class="ma-1 pa-1">
           <v-row class="align-center">
-            <v-col xs="12" sm="12" md="6">
+            <v-col xs="12" sm="12" md="4">
               <v-card-text v-html="years_800k.content" />
             </v-col>
 
-            <v-col xs="12" sm="12" md="6">
+            <v-col xs="12" sm="12" md="8">
               <InfoCard-2 :card="years_800k" />
             </v-col>
           </v-row>
         </v-container>
+        -->
       </v-card>
 
       <ul>
@@ -171,5 +181,8 @@ export default {
 <style scoped>
 .card_title {
   padding-bottom: 2px;
+}
+.border {
+  border: 2px solid;
 }
 </style>

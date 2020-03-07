@@ -1,11 +1,11 @@
 ---
 title: 800,000 Years of CO2 Levels and Temperature
+slug: 800k-years
 date: 2019-01-07
 published: true
 category: summary
 order: 3
 tags: ['Markdown', 'Cover Image']
-series: false
 cover_image: ./800k_co2_vs_temp.png
 canonical_url: false
 source: "CO2

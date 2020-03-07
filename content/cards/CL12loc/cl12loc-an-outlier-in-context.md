@@ -1,7 +1,8 @@
 ---
 title: The Outlier In Context
 date: 2019-01-07
-published: true
+slug: outlier-context
+published: false
 category: summary
 order: 5
 tags: ['Markdown', 'Cover Image']

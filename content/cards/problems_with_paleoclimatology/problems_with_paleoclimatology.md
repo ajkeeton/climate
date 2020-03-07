@@ -1,6 +1,7 @@
 ---
 title: Problems with Paleo?
 date: 2019-01-07
+slug: "problems-paleo"
 published: true
 category: summary
 order: 3
@@ -9,17 +10,26 @@ series: false
 cover_image: ./Reconstructed-Northern-Hemisphere-annual-temperature-during-the-last-2000-years-v2.jpg
 canonical_url: false
 source: TBD
-description: "Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions."
+description:
 ---
-This graph overlays data from 18 different paleoclimate studies and was included in the IPCC's Fifth Assessment Report 
+This graph overlays data from 18 different paleoclimate studies and was included in the IPCC's Fifth Assessment Report. It has served as ammunition to attack climate science on blogs, forums, and political discourse. 
 
-And it has served as ammunition to attack climate science on blogs, forums, and political discourse. 
+### "See, it was warmer in the past!" 
+&nbsp;
 
-"It was warmer in the past!"
+The light blue line is CL12loc. Here is a plot of that data by itself. The bands represent the upper and lower 2.5% quartile from the original data.
 
-"Paleoclimate data can't be trusted!"
+![The outlier](../CL12loc/CL12loc.png)
 
-The light blue line is CL12loc. It shows the highest temperatures and variability in that chart. It appears to show that temperatures 1000 years ago were on par with today's temperatures, and that massive temperature swings are relatively common. Let's take a closer look at that study, and its data.
+1. The *rate of change* is one of the most important causes of alarm in
+climate science. From the graph we see that the sustained rate of change over the last century is greater than what was seen in the 900s
+2. The warmest point on the graph is actually slightly cooler than today
+3. In the combined plot, all studies show an increase in cross-correlation over the last century
 
+&nbsp;
 
-Source https://www.ncdc.noaa.gov/global-warming/last-2000-years
+Paleoclimatology is complicated and has a high degree of uncertainty. This data set relied on 91 proxies - not direct measurements. Temperatures have to be reconstructed from the available data.
+
+Read about the original study here: https://www.clim-past.net/8/765/2012/cp-8-765-2012.pdf
+
+More: http://www.ncdc.noaa.gov/global-warming/last-2000-years
