@@ -4,10 +4,6 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/akeeton/c/climate/src/templates/Post.vue")
   },
   {
-    path: "/content/posts/ted-cruz-2/cruz-and-rss/",
-    component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/akeeton/c/climate/src/templates/Post.vue")
-  },
-  {
     path: "/content/posts/ted-cruz-3/cruz-and-rss/",
     component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/akeeton/c/climate/src/templates/Post.vue")
   },
@@ -17,6 +13,10 @@ export default [
   },
   {
     path: "/content/posts/ted-cruz-5/cruz-and-rss/",
+    component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/akeeton/c/climate/src/templates/Post.vue")
+  },
+  {
+    path: "/content/posts/ted-cruz-2/cruz-and-rss/",
     component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/akeeton/c/climate/src/templates/Post.vue")
   },
   {
@@ -96,16 +96,20 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--tag-vue" */ "/Users/akeeton/c/climate/src/templates/Tag.vue")
   },
   {
-    path: "/index-3/:page(\\d+)?/",
-    component: () => import(/* webpackChunkName: "page--src--pages--index-3-vue" */ "/Users/akeeton/c/climate/src/pages/Index-3.vue")
-  },
-  {
     path: "/index-4/:page(\\d+)?/",
     component: () => import(/* webpackChunkName: "page--src--pages--index-4-vue" */ "/Users/akeeton/c/climate/src/pages/Index-4.vue")
   },
   {
+    path: "/index-3/:page(\\d+)?/",
+    component: () => import(/* webpackChunkName: "page--src--pages--index-3-vue" */ "/Users/akeeton/c/climate/src/pages/Index-3.vue")
+  },
+  {
     path: "/index-5/:page(\\d+)?/",
     component: () => import(/* webpackChunkName: "page--src--pages--index-5-vue" */ "/Users/akeeton/c/climate/src/pages/Index-5.vue")
+  },
+  {
+    path: "/climate-data/:page(\\d+)?/",
+    component: () => import(/* webpackChunkName: "page--src--pages--climate-data-vue" */ "/Users/akeeton/c/climate/src/pages/Climate_Data.vue")
   },
   {
     path: "/summary/",
@@ -118,6 +122,10 @@ export default [
   {
     path: "/index-2/",
     component: () => import(/* webpackChunkName: "page--src--pages--index-2-vue" */ "/Users/akeeton/c/climate/src/pages/Index-2.vue")
+  },
+  {
+    path: "/common-arguments/",
+    component: () => import(/* webpackChunkName: "page--src--pages--common-arguments-vue" */ "/Users/akeeton/c/climate/src/pages/Common_Arguments.vue")
   },
   {
     path: "/about/",

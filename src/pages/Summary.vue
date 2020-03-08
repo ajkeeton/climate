@@ -1,13 +1,13 @@
 <template>
   <Layout>
     <h1>Summary</h1>
-    <div v-for="{ node } in $static.posts.edges" :key="node._id">
+    <div v-for="{ node } in $page.posts.edges" :key="node._id">
       <InfoCard :card="node"/>
     </div>
   </Layout>
 </template>
 
-<static-query>
+<page-query>
 query {
   posts: allInfoCard(sortBy: "order", order: ASC, filter: { category: { eq: "summary" }}) {
     edges {
@@ -23,7 +23,7 @@ query {
     }
   }
 }
-</static-query>
+</page-query>
 
 <script>
 

@@ -23,7 +23,7 @@ module.exports = function(api) {
       ]);
     }
   }),
-    api.loadSource(({ addSchemaTypes, schema }) => {
+  api.loadSource(({ addSchemaTypes, schema }) => {
       addSchemaTypes([
         schema.createObjectType({
           name: "PageContent",

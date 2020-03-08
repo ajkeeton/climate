@@ -1,87 +1,79 @@
 <template>
   <v-app>
-    <v-app-bar app dense absolute elevation=2 class="toolbar-background">
-  <!--
-    <v-app-bar 
-      app 
-      dark
-      elevation=12
-      src="https://picsum.photos/1920/1080?random">
-      <template v-slot:img="{ props }">
-        <v-img
-          v-bind="props"
-          gradient="to top right, rgba(19,84,0,.25), rgba(128,208,199,.9)"
-        ></v-img>
-      </template>
--->
-      <v-toolbar-title>
-        
-      </v-toolbar-title>
-
+    <v-app-bar app dense absolute elevation="2" class="toolbar-background">
       <v-btn text>
         <g-link class="nav__link" to="/">{{
           $static.metadata.siteName
         }}</g-link>
       </v-btn>
-
       <v-spacer></v-spacer>
-
-      <Search/>
-      <!--
-      <v-spacer />
-      <Search />
-      <v-btn text>
-        <g-link class="nav__link" to="/summary">The data</g-link>
-      </v-btn>
-      <v-btn text>
-        <g-link class="nav__link" to="/summary">Common Arguments</g-link>
-      </v-btn>
-      <v-divider vertical />
-      <v-btn text>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </v-btn>
-      -->
-
-      <!--
-      <v-container>
-        <v-row>
-          <v-col cols="6" sm="6" md="3">
-            <v-btn text>
-              <g-link class="nav__link" to="/summary">The data</g-link>
-            </v-btn>
-            <v-btn text>
-              <g-link class="nav__link" to="/summary">Common Arguments</g-link>
-            </v-btn>
-            <v-divider vertical />
-            <v-btn text>
-              <g-link class="nav__link" to="/about/">About</g-link>
-            </v-btn>
-          </v-col>
-           <v-col cols="6" sm="6" md="3">
-            <v-text-field
-              label="Regular"/>
-              <Search/>
-          </v-col>
-        </v-row>
-      </v-container>
-      -->
       <template v-slot:extension>
-        <v-tabs centered>
-          <v-tab to="/">Misinformation</v-tab>
-          <v-tab to="/summary">The data</v-tab>
-          <v-tab>Common arguments</v-tab>
-          <v-tab to="/about">About</v-tab>
-        </v-tabs>
+        <div class="d-flex d-sm-none">
+          <v-app-bar-nav-icon
+            @click.stop="drawer = !drawer"
+          ></v-app-bar-nav-icon>
+        </div>
+        <div
+          class="d-flex pa-2 align-center justify-center"
+          style="margin: auto;"
+        >
+          <div class="d-none d-sm-flex">
+            <div class="mx-2">
+              <v-btn small text to="/">The Misinformation</v-btn>
+            </div>
+            <v-divider vertical />
+            <div class="mx-2">
+              <v-btn small text to="/climate-data">The science</v-btn>
+            </div>
+            <v-divider vertical />
+            <!--<div class="mx-2">
+              <v-btn small text to="/common-arguments">Common arguments</v-btn>
+            </div>
+            <v-divider vertical />-->
+            <div class="mx-2">
+              <v-btn small text to="/about">About</v-btn>
+            </div>
+          </div>
+        </div>
       </template>
- 
+      <Search />
     </v-app-bar>
-    <v-content style="padding-top: 50px;">
+
+    <v-content style="padding-top: 80px;">
+      <v-navigation-drawer v-model="drawer" absolute temporary>
+        <v-card>
+          <v-list nav dense>
+            <v-list-item-group
+              v-model="group"
+              active-class="deep-purple--text text--accent-4"
+            >
+              <v-list-item>
+                <v-list-item-title><v-btn small text to="/">The Misinformation</v-btn></v-list-item-title>
+              </v-list-item>
+
+              <v-list-item>
+                <v-list-item-title><v-btn small text to="/climate-data">The science</v-btn></v-list-item-title>
+              </v-list-item>
+
+              <!--
+              <v-list-item>
+                <v-list-item-title><v-btn small text to="/common-arguments">Common arguments</v-btn></v-list-item-title>
+              </v-list-item>
+              -->
+              <v-list-item>
+                <v-list-item-title><v-btn small text to="/about">About</v-btn></v-list-item-title>
+              </v-list-item>
+            </v-list-item-group>
+          </v-list>
+        </v-card>
+      </v-navigation-drawer>
+
       <v-container fluid>
         <slot />
       </v-container>
     </v-content>
     <v-footer class="font-weight-medium pb-5">
-    <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
       <div>&copy; {{ new Date().getFullYear() }}</div>
     </v-footer>
   </v-app>
@@ -99,6 +91,15 @@ query {
 import Search from "~/components/Search.vue";
 
 export default {
+  data: () => ({
+    drawer: false,
+    group: null
+  }),
+  watch: {
+    group() {
+      this.drawer = false;
+    }
+  },
   components: {
     Search
   }
@@ -107,12 +108,13 @@ export default {
 
 <style scoped>
 .app-background {
-    background: #3A1C71;
-    background: -webkit-linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
-    background: linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
+  background: #3a1c71;
+  background: -webkit-linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71);
+  background: linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71);
 }
 .toolbar-background {
-  background-image: linear-gradient(180deg,hsla(0,0%,100%,0) 60%,#fff),linear-gradient(70deg,#dbedff 32%,#ebfff0);
+  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 60%, #fff),
+    linear-gradient(70deg, #dbedff 32%, #ebfff0);
   //background-image: linear-gradient(to right top, rgba(19, 84, 0, 0.25), rgba(128, 208, 199, 0.9));
 }
 </style>

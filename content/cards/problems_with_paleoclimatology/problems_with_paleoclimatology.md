@@ -22,7 +22,7 @@ The light blue line is CL12loc. Here is a plot of that data by itself. The band
 ![The outlier](../CL12loc/CL12loc.png)
 
 1. The *rate of change* is one of the most important causes of alarm in
-climate science. From the graph we see that the sustained rate of change over the last century is greater than what was seen in the 900s
+climate science. From the graph we see that the sustained rate of change over the last century is much greater than what was seen in the 900s
 2. The warmest point on the graph is actually slightly cooler than today
 3. In the combined plot, all studies show an increase in cross-correlation over the last century
 

@@ -2,6 +2,7 @@
   <div>
     <v-text-field
       label="search"
+      hide-details
       v-model="searchTerm"
       class="tsearch"
       flat
@@ -31,6 +32,6 @@ export default {
 
 <style scoped>
 .tsearch {
-  top: 20px;
+  //top: 20px;
 }
 </style>

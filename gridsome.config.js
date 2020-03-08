@@ -59,7 +59,11 @@ module.exports = {
   ],
   transformers: {
     remark: {
-      squeezeParagraphs: false
+      squeezeParagraphs: false,
+      imageQuality: 90,
+      plugins: [
+        'remark-attr',
+       ]
     }
   }
 }
