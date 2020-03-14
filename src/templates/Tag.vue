@@ -19,7 +19,6 @@ query Tag($id: ID!) {
           ... on Argument {
             id
             title
-            path
           }
         }
       }

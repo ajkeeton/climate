@@ -2,7 +2,6 @@
   <Layout>
     <v-card flat>
         <!--<v-card-title class="card_title">The real data</v-card-title>-->
-
         <v-container fluid class="ma-1 pa-1">
           <v-row justify="center" class="align-center">
             <v-col xs="12" md="8">
@@ -46,13 +45,13 @@
 
         <v-container fluid class="ma-1 pa-1">
           <v-row class="align-center">
-            <v-col xs="12" sm="12" md="4">
+            <v-col cols="12" sm="12" md="4">
               <v-card-text>
                 <p v-html="years_1000.content"></p>
               </v-card-text>
             </v-col>
 
-            <v-col xs="12" sm="12" md="8">
+            <v-col cols="12" sm="12" md="8">
               <InfoCard-2 :card="years_1000" />
             </v-col>
           </v-row>
@@ -98,7 +97,6 @@
             </v-col>
           </v-row>
         </v-container>
-      </v-card>
 
       <v-container fluid class="ma-1 pa-1">
         <v-row justify="center" class="align-center">
@@ -113,27 +111,21 @@
               </p>
 
               <p>
-                Carbon naturally occurs in three different isotopes, 12C, 13C, and 14C.
+                Carbon naturally occurs in three different isotopes, 12C, 13C, and radioactive 14C.
+                Using bubbles trapped in ice cores, we can measure 
+                historical atmospheric carbon isotope ratios (<a href=https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/jgrd.50668>more information</a>).
+              </p>
+
+              <p>
                 14C is produced in the upper atmosphere when neutrons from cosmic 
-                radiation impact 13C. 14C eventually makes its way to the surface and 
-                has a halflife of 5,700 years.
-              </p>
-
-              <p>
-                Using bubbles trapped in ice cores, we can measure historical atmospheric 
-                carbon isotope ratios. An excellent paper on the procedure and measurements 
-                from one such ice core is <a href=https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/jgrd.50668>
-                A revised 1000 year atmospheric δ13C‐CO2 record from Law Dome and South Pole, Antarctica</a>
-              </p>
-
-              <p>
-                Fossil fuels, being underground, do not have their 14C levels replenished.
-                Due to radioactive decay, the amount of 14C in fossil fuels is roughly
-                1000% lower than above ground measurements. Burning fossil fuels releases CO2
-                back into the atmosphere. Thus, fossil fuel emissions should lead to a
-                decrease in atmospheric 14C levels.
+                radiation impact 13C. The 14C atoms eventually makes their way to the 
+                surface, but fossil fuels, being underground, do not have their 14C 
+                levels replenished. Due to radioactive decay, the amount of 14C in fossil fuels 
+                is roughly 1000% lower than above ground measurements. When fossil fuels are 
+                burned, they release their stored CO2 back into the atmosphere. 
+                The diminished 14C concentration in those gases causes the 
                 <a href=https://www.esrl.noaa.gov/gmd/ccgg/isotopes/c14tellsus.html>
-                And that's exactly what has been measured.</a>
+                total atmospheric concentrations to drop</a>.
               </p>
 
               <p>
@@ -158,7 +150,7 @@
                 If you're interested in "big data" or datamining, <a href=https://cloud.google.com/public-datasets/weather>Google Cloud</a> 
                 and <a href=https://aws.amazon.com/blogs/big-data/visualize-over-200-years-of-global-climate-data-using-amazon-athena-and-amazon-quicksight/
       >Amazon Web Services</a> both host the GHCN Daily dataset. 
-                The GHCH daily includes 100,000 stations from 180 countries with measurements extending back to 1763. 
+                The GHCN Daily contains measurements from over 100,000 stations from 180 countries. The data extends back to 1763. 
                 </p>
                 <p>
                 A list of datasets can also be found at <a href=http://www.realclimate.org/index.php/data-sources/>RealClimate.org</a>
@@ -183,9 +175,6 @@
 
      
         <!--
-
-
-
           <v-card-text>
           
             Do climate change deniers have anything at all that is comparable?

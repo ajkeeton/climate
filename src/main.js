@@ -4,6 +4,8 @@
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
+import '~/assets/styles.css'
+//import '~/assets/variables.scss'
 
 export default function (Vue, { appOptions, router, head, isClient }) {
   head.link.push({

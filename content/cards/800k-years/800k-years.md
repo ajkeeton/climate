@@ -21,4 +21,4 @@ This chart shows atmospheric CO2 concentration and temperature over the last 800
 
 &nbsp;
 
-[They are now over 400PPM and rising](https://climate.nasa.gov/vital-signs/carbon-dioxide/)
+[They are now over 400PPM](https://climate.nasa.gov/vital-signs/carbon-dioxide/)

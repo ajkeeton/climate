@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
-    "@gridsome/transformer-remark": "^0.4.0",
+    "@gridsome/vue-remark": "^0.1.10",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.0.3",
     "deepmerge": "^4.2.2",
@@ -18,10 +18,11 @@
     "fibers": "^4.0.2",
     "gridsome": "^0.7.0",
     "gridsome-plugin-flexsearch": "^0.1.13",
+    "gridsome-plugin-remark-youtube": "^1.0.1",
+    "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
-    "remark-attr": "^0.9.0",
-    "remark-macro": "^1.0.7",
     "sass-loader": "^7.3.1",
+    "vue-lazy-youtube-video": "^2.0.0-beta.0",
     "vuetify": "^2.2.11"
   },
   "devDependencies": {
